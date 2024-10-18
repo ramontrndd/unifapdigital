@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function TodoList() {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
 
   const addTask = () => {
     if (task.trim()) {
       setTasks([...tasks, { text: task, completed: false }]);
-      setTask("");
+      setTask('');
     }
   };
 
@@ -18,12 +18,12 @@ function TodoList() {
   };
 
   const removeTask = (index) => {
-    const updatedTasks = [...tasks]; 
-    setTasks(updatedTasks); 
+    const updatedTasks = [...tasks];
+    setTasks(updatedTasks);
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
+    <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
       <h1>Lista de Tarefas</h1>
       <input
         value={task}
@@ -34,16 +34,23 @@ function TodoList() {
 
       <ul style={{ paddingLeft: 0 }}>
         {tasks.map((task, index) => (
-          <li key={index} style={{ margin: "10px 0" }}>
+          <li key={index} style={{ margin: '10px 0' }}>
             <input
               type="checkbox"
               checked={task.completed}
               onChange={() => toggleTask(index)}
             />
-            <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+            <span
+              style={{
+                textDecoration: task.completed ? 'line-through' : 'none',
+              }}
+            >
               {task.text}
             </span>
-            <button onClick={() => removeTask(index)} style={{ marginLeft: "10px" }}>
+            <button
+              onClick={() => removeTask(index)}
+              style={{ marginLeft: '10px' }}
+            >
               Remover
             </button>
           </li>
