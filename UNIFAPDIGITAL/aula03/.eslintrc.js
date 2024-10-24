@@ -19,7 +19,9 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'linebreak-style': ['error', 'unix'], // ou 'windows' se preferir
+    'linebreak-style': ['error', 'windows'], // Use 'windows' se necessário
+    'react/prop-types': 'off', // Desabilitar verificação de prop-types (opcional)
+    'react/react-in-jsx-scope': 'off', // Não é mais necessário com React 17+
   },
   settings: {
     react: {
