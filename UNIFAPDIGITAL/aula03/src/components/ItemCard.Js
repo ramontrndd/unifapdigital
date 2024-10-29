@@ -9,13 +9,13 @@ export default function ItemCard({ item, onDelete, onEdit }) {
         <div className="space-x-2">
           <button
             className="px-3 bg-blue-500 rounded"
-            onClick={() => onEdit}
+            onClick={() => onEdit(item)}
           ></button>
         </div>
         <div className="space-x-2">
           <button
             className="px-3 bg-red-500 rounded"
-            onClick={() => onDelete}
+            onClick={() => onDelete(item)}
           ></button>
         </div>
       </div>
